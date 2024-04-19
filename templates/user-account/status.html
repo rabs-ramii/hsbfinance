@@ -1,0 +1,14 @@
+{% include "user-account/header.html" with username=username.username%}
+
+<div class="user-status-bg-img">
+  <div class="container2">
+    <div class="welcome-text" style="margin-left: 10vw">
+      {% if message %}
+      <center>
+        <h6 style="color: #00483d; font-weight: bolder">{{message.message}}</h6>
+      </center>
+      {%endif%}
+    </div>
+  </div>
+</div>
+{% include "footer.html" %}

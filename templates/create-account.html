@@ -1,0 +1,62 @@
+{% include "header.html" %}
+<!--header file included here-->
+
+<div class="create-account-bg">
+  <div class="create-account-container">
+    {% if message %}
+    <center><h6 style="color: red">{{message}}</h6></center>
+    {% endif %}
+    <form method="POST">
+      {% csrf_token %}
+      <h3 style="color: #00483d">CREATE YOUR ACCOUNT HERE</h3>
+      <b><label>Full-Name</label></b>
+      <input
+        type="text"
+        name="name"
+        placeholder="Enter your full name"
+        class="input1"
+        required
+      /><br />
+      <b><label>Mobile No.</label></b>
+      <input
+        type="tel"
+        name="mobile"
+        placeholder="Enter your mobile no"
+        class="input1"
+        pattern="[0-9]{10}"
+        required
+      /><br />
+      <b><label>Email</label></b>
+      <input
+        type="email"
+        name="email"
+        placeholder="Enter your email here"
+        class="input1"
+        required
+      /><br />
+      <b><label>Password</label></b>
+      <input
+        type="password"
+        name="password"
+        placeholder="Enter your password"
+        class="input2"
+        required
+      /><br />
+      <b><label style="margin-top: 15px; margin-left: -100px">Gender</label></b>
+      <input
+        type="radio"
+        name="gender"
+        style="margin-left: 15px"
+        value="Male"
+      />Male
+      <input
+        type="radio"
+        name="gender"
+        style="margin-left: 15px"
+        value="Female"
+      />Female<br />
+
+      <button type="submit" class="btn btn-primary btn-signin">Sign up</button>
+    </form>
+  </div>
+</div>

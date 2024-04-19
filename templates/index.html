@@ -1,0 +1,64 @@
+{% include "header.html" %}
+<!--header included here-->
+
+<div class="bg-img">
+  <div class="container2">
+    
+    
+    <div class="welcome-text">
+      {% if message2 %}
+        <center><h6 style="color: green">{{message2}}</h6></center>
+        {%endif%}
+      <h3 style="color: #00483d; font-weight: bold">
+        HSB FINANCE WELCOMES YOU !
+      </h3>
+      <div class="p-container">
+        <p style="word-spacing: 8px">
+          HSB Financial Services is a reputable financial institution committed
+          to providing top-notch financial solutions and services to its
+          clients. With a strong focus on customer satisfaction and industry
+          expertise, HSB Financial Services aims to empower individuals and
+          businesses with the knowledge and tools they need to achieve their
+          financial goals.
+        </p>
+      </div>
+    </div>
+    <div class="login-container">
+      {% if message %}
+        <center><h6 style="color: red">{{message}}</h6></center>
+        {%endif%}
+      <form method="POST">
+        {% csrf_token %}
+        <center>
+          <h3 style="color: #00483d">LOGIN TO HSB FINANCE</h3>
+        </center>
+        <b><label class="form-label">Email</label></b>
+        <input
+          type="text"
+          name="email"
+          placeholder="Enter your email"
+          class="input1"
+          required
+        /><br />
+        <b><label class="form-label">Password</label></b>
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter your password"
+          class="input2"
+          required
+        /><br />
+
+        <button type="submit" class="btn btn-primary btn-signin">
+          Sign in
+        </button>
+        <br /><a href="{% url "forgetPassword" %}">forget password?</a>
+        <p>
+          Don't have account?
+          <a href="{% url "createAccount" %}">register here</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+{% include "footer.html" %}

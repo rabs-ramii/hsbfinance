@@ -1,0 +1,38 @@
+{% include "user-account/header.html" with username=username.username %}
+
+<div class="user-loan-bg-img">
+  <div class="container2">
+    <div class="welcome-text" style="margin-left: 5vw">
+      <h5 style="color: #00483d; font-weight: bolder" hidden>
+        YOU HAVE NOT APPLY FOR ANY LOAN YET
+      </h5>
+      <table class="table table-success table-striped table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">S.NO</th>
+            <th scope="col">Loan Type</th>
+            <th scope="col">Applied Amount</th>
+
+            <th scope="col">Approved Amount</th>
+
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% if data %} {% for row in data %}
+          <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ row.loan_type }}</td>
+            <td>{{ row.loan_amount }}</td>
+            <td>{{ row.approved_amount }}</td>
+
+            <td>{{ row.status }}</td>
+          </tr>
+          {% endfor %} {% endif %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% include "footer.html" %}

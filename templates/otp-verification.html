@@ -1,0 +1,60 @@
+{% include "header.html" %}
+
+    <div class="bg-img">
+      <div class="container2">
+        <div class="welcome-text">
+          <div style="margin-top: 20px">
+            <p style="word-spacing: 8px">
+              Enter the one-time password sent to your registered mobile number
+              to confirm your identity. The OTP is a short numeric code, valid
+              for a limited time. If you don't receive it, click "Resend OTP."
+              Remember, the OTP is for one-time use only and should not be
+              shared. We prioritize your security and will never ask for your
+              OTP or sensitive account information. Contact our customer support
+              for assistance. Rest assured, your personal and financial
+              information is protected. Keep your contact details updated for
+              smooth OTP delivery. Your security is our priority.
+            </p>
+          </div>
+        </div>
+        <div class="login-container">
+            {% if message %}
+                <center><h6 style="color: red">{{message}}</h6></center>
+                {% endif %}
+          <form method="POST">
+            {% csrf_token %}
+            <h3 style="color: #00483d">OTP VERIFICATION</h3>
+            <b
+              ><label>Enter 4 digit otp sent to your registered email</label></b
+            >
+            <br />
+            <input
+              type="number"
+              name="otp"
+              placeholder="enter otp here"
+              class="input1"
+              pattern="[0-9]{4}"
+              required
+            /><br />
+
+            <button type="submit" class="btn btn-primary btn-signin">
+              verify
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer navbar-dark bg-dark">
+      <div style="height: 50px; padding-top: 10px">
+        <center>
+          <p style="color: white">
+            All rights are reserved @HSB FINANACE | Design by
+            <a href="https://rabs-ramii.github.io/portfolio/" target="_blank">
+              rabs_ramii</a
+            >
+          </p>
+        </center>
+      </div>
+    </div>
+  </body>
+</html>
